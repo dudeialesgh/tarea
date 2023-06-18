@@ -43,7 +43,7 @@ class PowerUpManager:
                 elif isinstance(power_up, SpeedPowerUp):
                     game.player.power_up_type = THUNDER_TYPE
                     game.player.apply_speed_boost()
-                    game.player.set_image((40, 60), SPACESHIP)
+                    game.player.set_image((20, 30), SPACESHIP)
 
                 game.player.power_time_up = power_up.start_time + (self.duration * 1000)
                 self.power_ups.remove(power_up)
