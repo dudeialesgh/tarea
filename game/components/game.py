@@ -91,7 +91,7 @@ class Game:
         # preguntamos si el jugador tiene un power up activo
         if self.player.has_power_up:
             # calculamos el tiempo que le queda al power up
-            time_to_show = round((self.player.power_time_up - pygame.time.get_ticks()) / 1000,2)
+            time_to_show = round((self.player.power_time_up - pygame.time.get_ticks()) / 1000)
             # preguntamos si s ele acaba el tiempo
             if time_to_show >= 0:
                 self.menu.draw(self.screen, f'Power up time: {self.player.power_up_type.capitalize()} is enabled for {time_to_show} in seconds', 500, 50,(255,255,255))
@@ -100,6 +100,7 @@ class Game:
                 self.player.has_power_up = False
                 # devolvemos la nave a su estado normal
                 self.player.power_up_type = DEFAULT_TYPE
+                self.player.speed_boost =  False               
                 # cambiamos la imagen
                 self.player.set_image()
                 self.player.power_time_up = 0
