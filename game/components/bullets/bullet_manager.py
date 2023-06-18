@@ -1,12 +1,13 @@
 import pygame
 
 from game.components.enemies.enemy_weak.enemy import Enemy
-from game.utils.constants import SHIELD_TYPE
+from game.utils.constants import SHIELD_TYPE, SOUND_2
 
 class BulletManager:
     def __init__(self):
         self.bullets = []
         self.enemy_bullets = []
+        self.Sound = pygame.mixer.Sound(SOUND_2)
 
     def update(self, game):
         for bullet in self.enemy_bullets:
@@ -40,8 +41,9 @@ class BulletManager:
     def add_bullet(self, bullet):
         if bullet.owner == 'enemy' and len(self.enemy_bullets) < 1:
             self.enemy_bullets.append(bullet)
-        elif bullet.owner == 'player' and len(self.bullets) < 1:
+        elif bullet.owner == 'player' and len(self.bullets) < 2:
             self.bullets.append(bullet)
+            self.Sound.play(1)
 
     def reset(self):
         self.bullets = []

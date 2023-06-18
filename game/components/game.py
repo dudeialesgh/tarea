@@ -1,6 +1,7 @@
 import pygame
+import pygame.mixer
 
-from game.utils.constants import BG, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, ICON, FONT_STYLE
+from game.utils.constants import BG, SCREEN_HEIGHT, SCREEN_WIDTH, TITLE, FPS, DEFAULT_TYPE, ICON, FONT_STYLE, SOUND
 
 from game.components.spaceship import Spaceship
 from game.components.enemies.enemy_weak.enemy_manager import EnemyManager
@@ -12,6 +13,10 @@ from game.components.power_ups.power_up_manager import PowerUpManager
 class Game:
     def __init__(self):
         pygame.init()
+        # agregamos la muscia de fondo
+        pygame.mixer.init()
+        Sound = pygame.mixer.Sound(SOUND)
+        Sound.play(-1)
         pygame.display.set_caption(TITLE)
         pygame.display.set_icon(ICON)
         self.screen = pygame.display.set_mode((SCREEN_WIDTH, SCREEN_HEIGHT))

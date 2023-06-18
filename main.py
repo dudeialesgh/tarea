@@ -1,3 +1,4 @@
+import pygame
 from game.components.game import Game 
 
 

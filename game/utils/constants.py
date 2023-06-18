@@ -1,6 +1,8 @@
 import pygame
 import os
 
+
+
 # Global Constants
 TITLE = "Spaceships Game"
 SCREEN_HEIGHT = 600
@@ -30,3 +32,8 @@ BULLET_ENEMY = pygame.image.load(os.path.join(IMG_DIR, "Bullet/bullet_2.png"))
 ENEMY_1 = pygame.image.load(os.path.join(IMG_DIR, "Enemy/enemy_1.png"))
 
 FONT_STYLE = 'freesansbold.ttf'
+
+SOUND = os.path.join(IMG_DIR,'Sound/sound.wav')
+
+SOUND_2 = os.path.join(IMG_DIR,'Sound/shoot_ally.mp3')
+
